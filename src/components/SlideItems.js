@@ -11,13 +11,13 @@ function SlideItems(props){
 
         return (
         <>
-            <Pulse duration={9000} forever={true}>
-                <figure id={slideItemsId} className="SlideItemPic">
+            <Pulse duration={15000} forever={true}>
+                <figure id={slideItemsId} className="SlideItemPic" key={slideItemsId}>
                     <img src={`media/${slideItemsImg}`} alt={slideItemsTitle} className="slidepic" />
                 {/* <img src={process.env.PUBLIC_URL + '/media/carousel.jpg'} />
                     <img src={process.env.PUBLIC_URL + '/media/carousel1.jpg'} />
             <img src={process.env.PUBLIC_URL + '/media/carousel6.jpg'} />*/}
-                    
+                    <div className="d-flex justify-content-center align-self-center">
                         <figcaption>
                             <Zoom left cascade>
                                 {slideItemsContent}
@@ -25,8 +25,9 @@ function SlideItems(props){
                             </Zoom>
                             
                             <ReactTypingEffect
-                            text="-30%, -50%,  -70%, -90%" className="centered" eraseDelay={1000} typingDelay={2000} speed={300}/>
+                            text="-30%, -50%,  -70%, -90%" className="centered" eraseDelay={3000} typingDelay={2000} speed={300}/>
                         </figcaption>
+                    </div>
                     
               
                 </figure>

@@ -20,7 +20,7 @@ html,body {
     /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: italic;
-    padding: 0.1rem;
+    padding: 0.5rem;
 }
 li{
     list-style: none;
@@ -41,9 +41,10 @@ li{
     background-color: goldenrod;
     
 }
+/* 
 .catego{
     background: #130229;
-}
+} */
 
 .underline{
     width: 75%;
@@ -96,8 +97,8 @@ img{
 }
 figcaption{
     position: relative;
-    top: -384px;
-    left: 36%;
+    top: -485px; 
+    /* left: 50%; */
     font-family: fantasy;
     /* background: rgba(1, 1, 14, 0.863); */
     background: rgba(1, 1, 14, 0.692);
