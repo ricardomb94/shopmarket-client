@@ -1,38 +1,136 @@
-.App {
-  text-align: center;
+/* Body */
+html,body { 
+    padding-top: 0px; 
+    /* background: #010911; */
+}
+/* container-fluid */
+.container-fluid{
+    /* background: #010911; */
+    padding-left: 0;
+    padding-right: 0;
+   
+}
+/* Nav */
+.navbar-brand{
+    margin-left:1rem;
+    text-transform: uppercase;
+    background:rgb(236, 172, 9);
+    color:#010911;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    padding: 0.1rem;
+}
+li{
+    list-style: none;
+}
+.nav-link {
+    display: block;
+    padding: .6rem 2rem;
+    text-transform: uppercase;
+}
+.nav-link:hover {
+    /* background: #1f1f749a; */
+    background: #0d024d;
+    color:white!important;
+    /* text-decoration: underline; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.jumbotron {
+    background-color: goldenrod;
+    
+}
+.catego{
+    background: #130229;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.underline{
+    width: 75%;
+}
+.row {
+    
+    margin-right: 0px; 
+    margin-left: 0px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.private{
+    color: rgb(201, 148, 14);
+}
+.backgd{
+    /* background: rgba(250, 248, 249, 0.836); */
+    background: rgba(209, 208, 205, 0.288);
+}
+.bg-primary{
+    background: #010911!important;
+}
+.card{
+    margin-top:0.9rem;
+    border: 0.02rem solid rgba(0,0,0,.125);
+}
+/* .slidepic{
+    width:100%;
+}
+.SlideItemPic{
+    width:100%;
+} */
+img{
+    width:100%;
+    height:700px;
+    /* height:658px; */
+    object-fit: fill;
 }
 
-.App-link {
-  color: #61dafb;
+.slick-slide img {
+    margin-bottom: 5px;
+}
+.slick-prev:before, .slick-next:before{
+    font-size: 30px !important;
+    color:black !important;
+}
+.slick-prev:before {
+    display: none;
+}
+.slick-next:before {
+    display: none;
+}
+figcaption{
+    position: relative;
+    top: -384px;
+    left: 36%;
+    font-family: fantasy;
+    /* background: rgba(1, 1, 14, 0.863); */
+    background: rgba(1, 1, 14, 0.692);
+    color: darkgoldenrod;
+    letter-spacing: 0.1em;
+    border: 0.2em solid transparent;
+    width: max-content;
+    padding: 2rem;
+    font-size: larger;
+}
+.centered{
+    /* margin-left: 4rem; */
+    text-transform: uppercase;
+    /* text-align: center; */
+    font-size: x-large;
+    /* color: darkgoldenrod; */
+    color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0; 
+    width: 100%;
+    font-size: x-small;
+    /* background-color: #333; */
+    /* background-color: rgb(7, 53, 97); */
+    /* background-color: rgb(55, 55, 55); */
+    /* background: #030d16!important; */
+    background:#0f054b;
+    /* color:rgba(255, 255, 255, 0.863); */
+    color: rgb(204, 186, 139);
 }
+
