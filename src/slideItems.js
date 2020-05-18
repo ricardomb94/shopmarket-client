@@ -19,7 +19,7 @@ const slideItems = [
         id:4, 
         title:"manequin femme", 
         img:'carousel8.jpg', 
-        content:"LA FASHION ATTITUDE AU RENDEZ-VOUS"
+        content:"LA FASHION ATTITUDE TOUT SIMPLEMENT"
     },
 
     {
