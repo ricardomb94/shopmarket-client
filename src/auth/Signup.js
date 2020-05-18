@@ -98,7 +98,7 @@ const [values, setValues] = useState({
                 {signupForm()}
             </div>
         </Layout>
-    )
-}
+    );
+};
 
 export default Signup;

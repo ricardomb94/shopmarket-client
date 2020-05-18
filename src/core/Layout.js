@@ -6,7 +6,7 @@ import{Link,withRouter} from 'react-router-dom';
 const Layout = ({children, match, history}) => {
     const isActive = path => {
         if (match.path === path){
-            return {color:'#c9940e'};
+            return {color:'#c9945e'};
         }else {
             return{color:'#f0f0f'};
         }

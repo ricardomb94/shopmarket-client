@@ -15,8 +15,8 @@ const Routes =() => {
         <BrowserRouter>
             <Switch>
                 <Route path="/" exact component={App} />
-                <Route path="/Signin" exact component={Signin} />
-                <Route path="/Signup" exact component={Signup} />
+                <Route path="/signin" exact component={Signin} />
+                <Route path="/signup" exact component={Signup} />
                 <Route path="/auth/activate/:token" exact component={Activate} />
                 <PrivateRoute path="/private"  exact component={Private} />
                 <AdminRoute path="/Admin" exact component={Admin} />
