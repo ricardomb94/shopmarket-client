@@ -13,7 +13,7 @@ const Activate = ({match}) => {
 const [values, setValues] = useState({
     name:"",
     token:"",
-    // show:true,
+    show:true,
     buttonText:""
  });
  
@@ -22,7 +22,7 @@ const [values, setValues] = useState({
     let {name} = jwt.decode(token) ;  
     // console.log("message:"+ ""+ token);
     if(token){
-        setValues({...values,name,token})
+        setValues({ ...values, name, token})
     }
  },[]);
  
@@ -42,7 +42,7 @@ const [values, setValues] = useState({
     })
     .then(response => {
         console.log('ACCOUNT ACTIVATION', response)
-        setValues({...values});
+        setValues({ ...values, show:false});
         toast.success(response.data.message);
     })
     .catch(error => {

@@ -95,8 +95,8 @@ const Signin = ({history}) => {
 
 //On déclare une variable d'état local (ou le State), que l'on appellera "values" ou useState
 const [values, setValues] = useState({
-    email:"ricardo.mboukou@gmail.com",
-    password:"ricardo",
+    email:"ricardo.smsgx@gmail.com",
+    password:"amparo",
     buttonText:"Envoyer"
  });
 
@@ -132,7 +132,7 @@ const [values, setValues] = useState({
     .catch(error => {
         console.log('SIGNIN ERROR', error.response)
         setValues({...values,buttonText:"Soumis"})
-        toast.error(error.response)
+        toast.error(error.response.data.error)
     })
  };
 
@@ -159,7 +159,7 @@ const [values, setValues] = useState({
         <div className="col-md-6 offset-md-3">
             <ToastContainer/>
             {isAuth()? <Redirect to="/" /> : null}
-            {/*{JSON.stringify({email,password})}*/}
+            {JSON.stringify({email,password})}
             <h1 className="p-5 text-center">Signin</h1>
             {signinForm()}
             </div>

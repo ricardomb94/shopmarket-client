@@ -19,7 +19,7 @@ const [values, setValues] = useState({
  });
  
  //destructuring des valeurs du State
- const{name, email, password,buttonText} = values;
+ const{name, email, password, buttonText} = values;
  
  const handleChange = (name) => (event) => {
     // console.log(event.target.value);
@@ -42,9 +42,9 @@ const [values, setValues] = useState({
     })
     .catch(error => {
         console.log('SIGNUP ERROR', error)
-        setValues({...values,buttonText:"Envoyer"})
-        //  toast.error(error.response.data.error);
-         toast.error(error.data);
+        setValues({...values, buttonText:"Envoyer"})
+        toast.error(error.response.data.error);
+        //  toast.error(error.data);
     });
  };
 
@@ -57,7 +57,7 @@ const [values, setValues] = useState({
             <input 
                 onChange={handleChange('name')} 
                 value={name}
-                type="texte" 
+                type="text" 
                 className="form-control"
                 />
         </div>
@@ -65,7 +65,8 @@ const [values, setValues] = useState({
             <label className="text-muted">Email</label>
             <input 
                 onChange={handleChange('email')} 
-                value={email}type="texte" 
+                value={email}
+                type="email" 
                 className="form-control"
                 />
         </div>
@@ -74,7 +75,7 @@ const [values, setValues] = useState({
             <input 
                 onChange={handleChange('password')} 
                 value={password} 
-                type="texte" 
+                type="password" 
                 className="form-control"
                 />
         </div>
@@ -93,7 +94,7 @@ const [values, setValues] = useState({
             <div className="col-md-6 offset-md-3">
                 <ToastContainer/>
                 {isAuth()? <Redirect to="/" /> : null}
-            {/*{JSON.stringify({email,password})}*/}
+            {JSON.stringify({name, email, password})}
                 <h1 className="p-5 text-center">Signup</h1>
                 {signupForm()}
             </div>

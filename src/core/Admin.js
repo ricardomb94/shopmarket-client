@@ -52,7 +52,8 @@ const [values, setValues] = useState({
  const{role, name, email, password,buttonText} = values;
  
  const handleChange = (name) => (event) => {
-    // console.log(event.target.value);
+    event.preventDefault();
+    console.log(event.target.value);
     setValues({...values,[name]:event.target.value})
  }
  
@@ -136,7 +137,7 @@ const [values, setValues] = useState({
                         <li className="list-group-item">{name}</li>
                         <li className="list-group-item">{email}</li>
                         <li className="list-group-item">
-                            { isAuth() && isAuth().role === "admin"? "admin" : "Registered User"}</li>
+                            { isAuth() && isAuth().role === "admin"? "admin" : "Client"}</li>
                     </ul>
             </div>
         );

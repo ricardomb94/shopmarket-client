@@ -37,7 +37,7 @@ const [values, setValues] = useState({
         setValues({...values, role, name, email})
     })
     .catch(error => {
-        console.log('PIRVATE PROFILE UPDATE ERROR', error.response.data.error)
+        console.log('PIRVATE PROFILE UPDATE ERROR', error.response.error)
         if(error.response.status === 401){
             signout(()=> {
                 history.push('/');
