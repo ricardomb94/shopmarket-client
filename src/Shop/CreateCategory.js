@@ -1,18 +1,21 @@
-import {isAuth} from '../auth/helpers';
+import {isAuth, getCookie} from '../auth/helpers';
 import axios from "axios";
 
-// const token = localStorage.getItem("token");
-
- const CreateCategory = (user,token, category) => {
+  const checkAuth = isAuth();
+  const token = getCookie('token');
+  console.log(token)
+  
+ const CreateCategory = (_id, token,category) => {
+ console.log(category)
         return (
                 
                 axios({
                     method: 'POST',
-                    url: `${process.env.REACT_APP_API}/category/create/${isAuth()._id}`,
+                    url: `${process.env.REACT_APP_API}/category/create`,
                     headers: {
                       Accept: "application/json",
-                      Authorization:`Bearer  ${token}`
-                    },data:{category},
+                      Authorization:`Bearer ${token}`
+                    },data:{'category': 'namaaaa'}
                 })
                 .then(response => {
                     console.log('ADD CATEGORY RESP.', response);
@@ -22,31 +25,5 @@ import axios from "axios";
                 })
         )}
         
-        
-        
-        
-        
-        
-// export const CreateCategory = (userId, token, category) => {
-// // console.log('USERID',userId)
-//     return (fetch(`${process.env.REACT_APP_API}/category/create/${userId}`,{
-//         method: "POST",
-//         headers:{
-//             accept:"application/json",
-//             "Content-Type": "application/json",
-//             Authorization:`Bearer  ${token}`
-//         },
-//         body: JSON.stringify(category)
-    
-//     }).then(response => {
-//         return response.json()
-//     }).catch(err => {
-//         console.log(err);
-//     })
-// )}
-   
-    
-   
-
 
 export default  CreateCategory      

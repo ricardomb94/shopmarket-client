@@ -12,9 +12,9 @@ const Signup = () => {
 
 //On déclare une variable d'état local (ou le State), que l'on appellera "values" ou useState
 const [values, setValues] = useState({
-    name:"",
-    email:"",
-    password:"",
+    name:"Makosso",
+    email:"ricardo.smsgx@gmail.com",
+    password:"makosso",
     buttonText:"Envoyer"
  });
  

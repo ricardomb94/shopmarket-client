@@ -15,12 +15,12 @@ const AddCategory = () => {
 
 
 //On destruture user à partir du localstorage
-    const {userId} = isAuth(); 
-    // console.log(user)
-    const token = getCookie('token')
-    // console.log(token)
-    
-    
+    // const {userId} = isAuth(); 
+    // console.log(userId)
+   const token = getCookie('token');
+//    console.log('TOKEN FRONT',token)
+   const userId = isAuth();
+    // console.log('userId=>', userId);
     
     const handleChange =  (e) => {
         e.preventDefault()
@@ -34,14 +34,7 @@ const AddCategory = () => {
        
        //Reaquette API pour créer les catégories
      CreateCategory(userId, token, {name})
-        .then(data => {
-            if(error) {
-                setError(true)
-            }else {
-                setError('')
-                setSuccess(true)
-            }
-       });  
+         
     };
 
     const newCategoryForm = () => (
@@ -60,7 +53,7 @@ const AddCategory = () => {
                                     autoFocus
                                     />
                                     <br/>
-                                <button className="btn btn-outline-danger">Créer une catégorie
+                                <button type="submit" className="btn btn-outline-danger">Créer une catégorie
                                 </button>    
                 </div>
         </form>
