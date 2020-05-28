@@ -11,11 +11,11 @@ import axios from "axios";
                 
                 axios({
                     method: 'POST',
-                    url: `${process.env.REACT_APP_API}/category/create`,
+                    url: `${process.env.REACT_APP_API}/category/create/${_id}`,
                     headers: {
                       Accept: "application/json",
                       Authorization:`Bearer ${token}`
-                    },data:{'category': 'namaaaa'}
+                    },data:{category}
                 })
                 .then(response => {
                     console.log('ADD CATEGORY RESP.', response);

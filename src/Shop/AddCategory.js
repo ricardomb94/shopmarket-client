@@ -33,7 +33,7 @@ const AddCategory = () => {
        setSuccess(false)
        
        //Reaquette API pour créer les catégories
-     CreateCategory(userId, token, {name})
+     CreateCategory(userId._id, token, {name})
          
     };
 
