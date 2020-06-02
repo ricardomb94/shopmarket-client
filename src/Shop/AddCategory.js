@@ -15,8 +15,6 @@ const AddCategory = () => {
 
 
 //On destruture user à partir du localstorage
-    // const {userId} = isAuth(); 
-    // console.log(userId)
    const token = getCookie('token');
 //    console.log('TOKEN FRONT',token)
    const userId = isAuth();
