@@ -15,7 +15,8 @@ html,body {
     margin-left:1rem;
     text-transform: uppercase;
     background:rgb(236, 172, 9);
-    color:#010911;
+    /* color:#010911; */
+    color:#ecebf3;
     /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
     /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

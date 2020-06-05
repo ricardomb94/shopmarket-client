@@ -43,8 +43,8 @@ const [values, setValues] = useState({
     .catch(error => {
         console.log('SIGNUP ERROR', error)
         setValues({...values, buttonText:"Envoyer"})
-        toast.error(error.response.data.error);
-        //  toast.error(error.data);
+        // toast.error(error.response.data.error);
+         toast.error(error.data);
     });
  };
 

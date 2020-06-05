@@ -137,7 +137,7 @@ const [values, setValues] = useState({
                         <li className="list-group-item">{name}</li>
                         <li className="list-group-item">{email}</li>
                         <li className="list-group-item">
-                            { isAuth() && isAuth().role === "admin"? "admin" : "Client"}</li>
+                            { isAuth() && isAuth().role === "admin"? "admin" : "subscriber"}</li>
                     </ul>
             </div>
         );
@@ -157,7 +157,7 @@ const [values, setValues] = useState({
     
 return(
     <Layout title="Dashboard" description="User Dashboard" className="container">
-        <div className="jumbotron text-center text-uppercase">Bonjour {name} Bienvenu!</div>
+        <div className="jumbotron text-center text-uppercase">Bonjour {name}. Nous sommes le {new Date().toLocaleDateString()}. Bienvenu!</div>
         {/*<div className="col-md-6 offset-md-3 backgd">
             <ToastContainer/>
             <h4 className="pt-5 text-center private">Bienvenu sur votre espace personel</h4>
