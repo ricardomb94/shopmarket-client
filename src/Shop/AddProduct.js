@@ -19,9 +19,9 @@ const AddProduct = () => {
         error:'',
         createProduct:'',
         redirectToprofile:false,
-        formData:''
+        formData: new FormData()
     })
-    
+
     const {
         name,
         description,
@@ -36,64 +36,44 @@ const AddProduct = () => {
         redirectToprofile,
         formData,
     } = values
-    
+
     const userId = isAuth();
-    console.log('USER_ID', userId);
-    
+
     const token = getCookie('token');
-    console.log('TOKEN', token);
-    
+
     useEffect(() => {
         setValues({...values, formData: new FormData()})
     },[])
-    
+
     const handleChange = name => event => {
-        const value = name === 'photo' ? event.target.files[0]: event.target.value
+        const value = name === 'image' ? event.target.files[0]: event.target.value
         formData.set(name, value)
         setValues({...values, [name]: value})
     }
-    const clickSubmit = event => {
+    const clickSubmit = async event => {
        event.preventDefault()
        setValues({...values, error: '', loading: true});
-       
-       CreateProduct(userId._id, token, formData)
-       .then(data => {
-        if(error){
-            setValues({...values, error: error})
-        }else{
-            setValues({
-                    ...values,
-                    name:'',
-                    description:'',
-                    image:'',
-                    price:'',
-                    quantity:'',
-                    loading:false,
-                    // CreateProduct:name
-                    
-            })
-            }
-       })
+       await CreateProduct(userId._id, token, formData)
     };
-    
+
     const newPostForm = () => (
-        <form className="mb-3" onSubmit={clickSubmit}>
+        <form className="mb-3" onSubmit={clickSubmit} encType="multipart/form-data">
             <div className="form-group">
             <div className="jumbotron catego text-center text-uppercase text-muted font-x-small">
                     <Zoom right cascade><h4>La création c'est l'intelligence qui s'amuse</h4></Zoom>
                         <Pulse><hr className="bg-danger underline"/></Pulse></div>
                         <h5 className="text-muted">inserez une image</h5>
                 <label className="btn btn-danger text-light">
-                <input 
+                <input
                     onChange={handleChange('image')}
-                    type="file" 
-                    name="image" 
+                    type="file"
+                    name="image"
                     accept="image/*" />
                 </label>
             </div>
             <div className="form-group">
                 <label className="text-muted">Nom</label>
-                <input 
+                <input
                 onChange={handleChange('name')}
                 type="text"
                 className="form-control"
@@ -102,7 +82,7 @@ const AddProduct = () => {
             </div>
             <div className="form-group">
                 <label className="text-muted">Description</label>
-                <textarea 
+                <textarea
                 onChange={handleChange('description')}
                 className="form-control"
                 value={description}
@@ -110,7 +90,7 @@ const AddProduct = () => {
             </div>
             <div className="form-group">
                 <label className="text-muted">Prix</label>
-                <input 
+                <input
                 onChange={handleChange('price')}
                 type="number"
                 className="form-control"
@@ -119,7 +99,7 @@ const AddProduct = () => {
             </div>
             <div className="form-group">
                 <label className="text-muted">Categorie</label>
-                <select 
+                <select
                     onChange={handleChange('category')}
                     className="form-control"
                 >
@@ -129,7 +109,7 @@ const AddProduct = () => {
             </div>
             <div className="form-group">
                 <label className="text-muted">Livrason</label>
-                <select 
+                <select
                 onChange={handleChange('shipping')}
                 className="form-control"
                 >
@@ -139,7 +119,7 @@ const AddProduct = () => {
             </div>
             <div className="form-group">
                 <label className="text-muted">Quantité</label>
-                <input 
+                <input
                 onChange={handleChange('quantity')}
                 type="number"
                 className="form-control"
@@ -149,16 +129,16 @@ const AddProduct = () => {
             <button className="btn btn-outline-primary">Créez un Produit</button>
         </form>
         );
-    
+
     return(
-        <Layout 
+        <Layout
         title="Ajouter un produit" className="container">
             <div className="row">
                 <div className="col-md-8 offset-md-2">{newPostForm()}</div>
             </div>
         </Layout>
-        
-        
+
+
     );
 }
 export default AddProduct;
