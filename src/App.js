@@ -3,15 +3,15 @@ import Layout from './core/Layout';
 import SliderEvent from './components/SliderEvent';
 
 
-const App = ()=> {
-  return(
+const App = ()=> (
+ 
     
-    <Layout>
-      <div>
+    <Layout title="Accueil" description="E-SHOP">
+     
         <SliderEvent/>
-      </div>
+      ...
     </Layout>
- );
-};
+
+);
 
 export default App;

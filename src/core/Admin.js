@@ -10,7 +10,6 @@ import 'react-toastify/dist/ReactToastify.min.css';
 
 
 const Admin = ({history}) => {
-
 //On déclare une variable d'état local (ou le State), que l'on appellera "values" ou useState
 const [values, setValues] = useState({
     role:'',
@@ -104,7 +103,7 @@ const [values, setValues] = useState({
             <label className="text-muted">Changer votre mot de passe:</label>
             <input onChange={handleChange('password')} value={password} type="texte" className="form-control"/>
         </div>
-        <div className="form-group col-md-6 mb-3">
+        <div className="form-group col-md-6 mb-4">
             <button className="btn btn-primary" onClick={clickSubmit}>{buttonText}</button>
         </div>
     </form>
@@ -120,11 +119,15 @@ const [values, setValues] = useState({
                         </Link>
                     </li>
                     <li className="list-group-item">
+                        <Link className="nav-link" to="/categories">
+                            Afficher les Catégories
+                        </Link>
+                    </li>
+                    <li className="list-group-item">
                         <Link className="nav-link" to="/product/create">
                             Créer un Produit
                         </Link>
                     </li>
-                    
                 </ul>
             </div>
         )
@@ -138,44 +141,35 @@ const [values, setValues] = useState({
                         <li className="list-group-item">{email}</li>
                         <li className="list-group-item">
                             { isAuth() && isAuth().role === "admin"? "admin" : "subscriber"}</li>
+                            <li className="list-group-item">
+                        <Link className="nav-link" to="/admin/upate">
+                            Modifiez votre profile
+                        </Link>
+                    </li>
                     </ul>
             </div>
         );
         
     };
     
-    {/*const purchaseHistory = () => {
-        return(
-            <div className="card mb-5">
-            <h3 className="card-header">Suivi des Commandes</h3>
-                <ul className="list-group">
-                    <li className="list-group-item">Historique</li>
-                </ul>
-        </div>
-        )
-    }*/}
-    
 return(
     <Layout title="Dashboard" description="User Dashboard" className="container">
         <div className="jumbotron text-center text-uppercase">Bonjour {name}. Nous sommes le {new Date().toLocaleDateString()}. Bienvenu!</div>
-        {/*<div className="col-md-6 offset-md-3 backgd">
-            <ToastContainer/>
-            <h4 className="pt-5 text-center private">Bienvenu sur votre espace personel</h4>
-            <p className="lead text-center">Mise à jour Profile</p>
-            {updateForm()}
-</div>*/}
         <div className="row">
-            <div className="col-3">
+            <div className="col-4">
                 {adminLinks()}
             </div>
-            <div className="col-9">
+            <div className="col-8">
                 {adminInfo()}
-                {updateForm()}
-{ /* {purchaseHistory()}*/}
+               {updateForm()}
             </div>
         </div>
     </Layout>
 )
 }
+
+
+
+
 
 export default Admin;

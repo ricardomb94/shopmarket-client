@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
 import{Link,withRouter} from 'react-router-dom';
 import { isAuth, signout } from '../auth/helpers';
 
 
-const Layout = ({children, match, history}) => {
+const Layout = ({children, match, history, title = 'Title', description = 'Description', className}) => {
     const isActive = path => {
         if (match.path === path){
             return {color:'#c9945e'};
@@ -12,6 +12,7 @@ const Layout = ({children, match, history}) => {
             return{color:'#fff'};
         }
     };
+    
     const nav = () => (
         <nav className="navbar navbar-expand-sm sticky-top navbar-light bg-primary catego">
             {/*<a className="navbar-brand" href="#">SHOP-MARKET</a>*/}
@@ -26,7 +27,7 @@ const Layout = ({children, match, history}) => {
                     <li className="nav-item ">
                         <Link to="/" className="nav-link" style={isActive('/')}>
                             Accueil {/*{JSON.stringify(match)}*/}
-                        </Link> 
+                        </Link>
                     </li>
                     
                     {!isAuth() && (
@@ -85,12 +86,19 @@ const Layout = ({children, match, history}) => {
     return (
         <Fragment>
             {nav()}
+            <div>
+                <h2>{title}</h2>
+                <p className="lead">{description}</p>
+                
+            </div>
             <div className="container-fluid">
                 {children}
             </div>
-            {Footer()}
+            
+                
+           {/* {Footer()}*/}
         </Fragment>
     )
 };
 
-export default withRouter(Layout);
+export default withRouter(Layout);// withRouter = donne acces 

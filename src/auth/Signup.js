@@ -94,7 +94,7 @@ const [values, setValues] = useState({
             <div className="col-md-6 offset-md-3">
                 <ToastContainer/>
                 {isAuth()? <Redirect to="/" /> : null}
-            {JSON.stringify({name, email, password})}
+           {/* {JSON.stringify({name, email, password})}*/}
                 <h1 className="p-5 text-center">Signup</h1>
                 {signupForm()}
             </div>
