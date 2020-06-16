@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Layout from '../core/Layout';
-import{Link,withRouter} from 'react-router-dom';
-// import Layout from '../core/Layout';
 
-const Home = ({history}) 
+
+
+
+const Home = () => (
+    <Layout>
+       
+    </Layout>
+)
  
 
 

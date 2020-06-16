@@ -4,6 +4,7 @@ import{Link,withRouter} from 'react-router-dom';
 import { isAuth, signout } from '../auth/helpers';
 
 
+
 const Layout = ({children, match, history, title = 'Title', description = 'Description', className}) => {
     const isActive = path => {
         if (match.path === path){
