@@ -1,5 +1,7 @@
 import React from 'react'
 import{Link} from 'react-router-dom'
+import ProductImage from './ProductImage'
+
 
 
 const Card = ({product}) => {
@@ -9,6 +11,7 @@ const Card = ({product}) => {
             <div className="card">
                 <div className="card-header">{product.name}</div>
                     <div className="card-body">
+                        <ProductImage item={product} url="product"/>
                         <p>{product.description}</p>
                         <p>{product.price}€</p>
                           <Link to="/">
