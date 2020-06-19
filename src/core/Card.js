@@ -5,18 +5,18 @@ import{Link} from 'react-router-dom'
 const Card = ({product}) => {
     return (
     
-        <div className="card mb-3">
+        <div className="col-xs-8 col-sm-4 mb-4 mt-2">
             <div className="card">
                 <div className="card-header">{product.name}</div>
                     <div className="card-body">
                         <p>{product.description}</p>
-                        <p>{product.price}</p>
+                        <p>{product.price}€</p>
                           <Link to="/">
                              <button className="btn btn-outline-primary mt-2 mb-2" >
-                                En savoir plus
+                                Voir l'article
                             </button>
                           </Link>
-                             <button className="btn btn-outline-primary mt-2 mb-2" >
+                             <button className="btn btn-outline-warning mt-2 mb-2" >
                                 Ajouter au pagner
                             </button>
                     </div>

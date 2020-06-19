@@ -41,17 +41,22 @@ const App = ()=> {
     
     return(
     
-          <Layout title="" description="Accueil">
-          
+          <Layout title="" description="Accueil" className="container-fluid">
             <SliderEvent/>
-              <h2 className="mb-4">Meilleurs ventes</h2>
+            {/*<p className="text-center text-light mt-2 bg-info">Renouvelez votre garde robe avec la sélection de robes stylées. En réduction maintenant, il n'y a jamais eu de meilleur moment pour acheter.</p>*/}
+              <h2 className="mb-4 text-center">Meilleurs ventes</h2>
+              <div className="row">
               {productsBySell.map((product, i)=>(
-                  <Card key={i} product={product}/>
-              ))}
-              <h2 className="mb-4">Les nouveautées</h2>
+                <Card key={i} product={product}/>
+            ))}
+              </div>
+              
+              <h2 className="mb-4 text-center">Les nouveautées</h2>
+              <div className="row">
               {productsByArrival.map((product, i)=>(
-                  <Card key={i} product={product}/>
-    ))}
+                <Card key={i} product={product}/>
+            ))}
+              </div>
             
             
           </Layout>

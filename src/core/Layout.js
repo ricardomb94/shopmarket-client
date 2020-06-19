@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-// import Footer from '../components/Footer';
+import Footer from '../components/Footer';
 import{Link,withRouter} from 'react-router-dom';
 import { isAuth, signout } from '../auth/helpers';
 
@@ -97,7 +97,7 @@ const Layout = ({children, match, history, title = 'Title', description = 'Descr
             </div>
             
                 
-           {/* {Footer()}*/}
+            {Footer()}
         </Fragment>
     )
 };
