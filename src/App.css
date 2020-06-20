@@ -101,7 +101,7 @@ img{
 } */
 figcaption{
     position: relative;
-    top: -470px; 
+    top: -400px; 
     font-family: fantasy;
     background: rgba(1, 1, 14, 0.692);
     color: darkgoldenrod;
@@ -125,7 +125,10 @@ figcaption{
 .text-co{
     color: rgb(192, 172, 121);
 }
-
+.card-body {
+    border: none;
+    padding: 0;
+}
 
 /* Footer */
 footer {
@@ -145,4 +148,10 @@ footer {
 
 .bkg{
     background:#0f054b;
+}
+
+
+
+@media (max-width: 767.98px){
+    
 }

@@ -6,7 +6,7 @@ const ProductImage = ({item, url}) => (
             src={`${process.env.REACT_APP_API}/${url}/image/${item._id}`} 
             alt={item.name} 
             className="mb-3" 
-            style={{maxHeight:'70%', maxWidth:'100%'}} 
+            style={{maxHeight:'500px', maxWidth:'100%'}} 
             />
     </div>
     )
