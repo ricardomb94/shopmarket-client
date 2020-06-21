@@ -124,9 +124,14 @@ figcaption{
 }
 .text-co{
     color: rgb(192, 172, 121);
+    background: blanchedalmond;
 }
+
+.card-header {
+    text-transform: uppercase;
+}
+
 .card-body {
-    border: none;
     padding: 0;
 }
 
@@ -152,6 +157,8 @@ footer {
 
 
 
-@media (max-width: 767.98px){
-    
-}
+/* @media (min-width: 1200px){
+    .container {
+        max-width: 1317px;
+    }
+} */

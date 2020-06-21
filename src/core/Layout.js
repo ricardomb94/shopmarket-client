@@ -89,7 +89,7 @@ const Layout = ({children, match, history, title = 'Title', description = 'Descr
             {nav()}
             <div>
                 <h2>{title}</h2>
-                <p className="lead">{description}</p>
+                {/*<p className="lead">{description}</p>*/}
                 
             </div>
             <div className="container-fluid">

@@ -25,7 +25,7 @@ function SlideItems(props){
                             </Zoom>
                             
                             <ReactTypingEffect
-                            text="-30%, -50%,  -70%, -90%" className="centered" eraseDelay={3000} typingDelay={2000} speed={300}/>
+                            text="  jusqu'à -30%, -50%, -70%, -75% " className="centered" eraseDelay={3000} typingDelay={2000} speed={300}/>
                         </figcaption>
                     </div>
                     
