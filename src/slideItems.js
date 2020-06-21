@@ -4,7 +4,7 @@ const slideItems = [
     {
         id:1, 
         title:"manequin femme", 
-        img:'carousel.jpg',
+        img:'carousel08.jpg',
         content:"BIENVENUE SUR E-SHOP FAITES VOS EMPLETTES"
     }, 
     
@@ -18,7 +18,7 @@ const slideItems = [
     {
         id:4, 
         title:"manequin femme", 
-        img:'carousel8.jpg', 
+        img:'carousel-8.jpg', 
         content:"LA FASHION ATTITUDE TOUT SIMPLEMENT"
     },
 
@@ -36,13 +36,13 @@ const slideItems = [
         content:"DONNEZ UNE TOUCHE D'ELEGANCE A VOTRE GARDE ROBE",
     },
     {
-        id:4, 
+        id:5, 
         title:"manequin femme",  
         img:'carousel07.jpg', 
-        content:"DES ASTUCES POUR UN STYLE HAUT EN COULEUR ET CHIC"
+        content:"UN STYLE HAUT EN COULEUR POUR VOS SORTIES CHICS"
     }, 
     {
-        id:5, 
+        id:6, 
         title:"manequin femme", 
         img:'main.jpeg', 
         content:"NOS COUPS DE COEUR POUR LA BELLE SAISON "

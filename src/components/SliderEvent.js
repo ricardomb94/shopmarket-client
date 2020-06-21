@@ -92,7 +92,7 @@ const settings = {
 const SliderEvent = () => (
 
 
-    <Slider {...settings}>
+    <Slider {...settings} className="sliderEvent">
         {
             slideItems.map(slideItems => (
                 <SlideItems 

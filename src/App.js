@@ -46,7 +46,7 @@ const App = ()=> {
             {/*<p className="text-center text-light mt-2 bg-info">Renouvelez votre garde robe avec la sélection de robes stylées. En réduction maintenant, il n'y a jamais eu de meilleur moment pour acheter.</p>*/}
               
               <h2 className="mb-4 text-center text-co p-5"><u>Les nouveautées</u></h2>
-              {/*<div className="container">*/}
+              <div className="container central">
               <div className="row">
               {productsByArrival.map((product, i)=>(
                 <Card key={i} product={product}/>
@@ -58,7 +58,7 @@ const App = ()=> {
                 <Card key={i} product={product}/>
             ))}
               </div>
-              {/*</div>*/}
+              </div>
             
             
           </Layout>

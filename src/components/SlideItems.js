@@ -13,6 +13,7 @@ function SlideItems(props){
         <>
             <Pulse duration={15000} forever={true}>
                 <figure id={slideItemsId} className="SlideItemPic" key={slideItemsId}>
+                <div className="slideImg">
                     <img src={`media/${slideItemsImg}`} alt={slideItemsTitle} className="slidepic" />
                 {/* <img src={process.env.PUBLIC_URL + '/media/carousel.jpg'} />
                     <img src={process.env.PUBLIC_URL + '/media/carousel1.jpg'} />
@@ -25,11 +26,11 @@ function SlideItems(props){
                             </Zoom>
                             
                             <ReactTypingEffect
-                            text="  jusqu'à -30%, -50%, -70%, -75% " className="centered" eraseDelay={3000} typingDelay={2000} speed={300}/>
+                            text="  jusqu'à -30%, -50%, -70%, -75% " className="centered" eraseDelay={1000} typingDelay={2000} speed={300}/>
                         </figcaption>
                     </div>
                     
-              
+                    </div>
                 </figure>
             </Pulse>
         </>

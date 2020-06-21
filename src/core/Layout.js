@@ -88,7 +88,7 @@ const Layout = ({children, match, history, title = 'Title', description = 'Descr
         <Fragment>
             {nav()}
             <div>
-                <h2>{title}</h2>
+    {/*<h2>{title}</h2>*/}
                 {/*<p className="lead">{description}</p>*/}
                 
             </div>

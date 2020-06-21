@@ -50,11 +50,11 @@ li{
 .underline{
     width: 75%;
 }
-.row {
+/* .row {
     
     margin-right: 0px; 
     margin-left: 0px;
-}
+} */
 
 .private{
     color: rgb(201, 148, 14);
@@ -70,21 +70,14 @@ li{
     margin-top:0.9rem;
     border: 0.02rem solid rgba(0,0,0,.125);
 }
-/* .slidepic{
-    width:100%;
-}
-.SlideItemPic{
-    width:100%;
+/* .sliderEvent{
+    height: 900px;
+    margin-bottom: -27px;
 } */
-img{
-    width:100%;
-    height:800px;
-    /* height:658px; */
-    object-fit: fill;
-}
 
 .slick-slide img {
-    margin-bottom: 5px;
+    max-height: 750px;
+    margin-bottom: -121px;
 }
 .slick-prev:before, .slick-next:before{
     font-size: 30px !important;
@@ -96,12 +89,20 @@ img{
 .slick-next:before {
     display: none;
 }
-/* figure{
-    margin-inline-end: 10px;
+/* .slideImg{ 
+    object-fit: contain;
+    width:100%;
 } */
+
+
+img{
+    width:100%;
+    object-fit: fill;
+}
+
 figcaption{
     position: relative;
-    top: -400px; 
+    top: -300px; 
     font-family: fantasy;
     background: rgba(1, 1, 14, 0.692);
     color: darkgoldenrod;
@@ -112,9 +113,7 @@ figcaption{
     font-size: larger;
 }
 .centered{
-    /* margin-left: 4rem; */
     text-transform: uppercase;
-    /* text-align: center; */
     font-size: x-large;
     /* color: darkgoldenrod; */
     color: white;
@@ -129,11 +128,15 @@ figcaption{
 
 .card-header {
     text-transform: uppercase;
+    font-size: 0.8rem;
 }
 
 .card-body {
     padding: 0;
 }
+/* .central{
+    
+} */
 
 /* Footer */
 footer {
@@ -157,8 +160,8 @@ footer {
 
 
 
-/* @media (min-width: 1200px){
-    .container {
+@media (min-width: 1200px){
+    .central {
         max-width: 1317px;
     }
-} */
+}
