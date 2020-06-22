@@ -30,6 +30,11 @@ const Layout = ({children, match, history, title = 'Title', description = 'Descr
                             Accueil {/*{JSON.stringify(match)}*/}
                         </Link>
                     </li>
+                    <li className="nav-item ">
+                        <Link to="/Catalogue" className="nav-link" style={isActive('/Catalogue')}>
+                            Catalogue {/*{JSON.stringify(match)}*/}
+                        </Link>
+                    </li>
                     
                     {!isAuth() && (
                         <Fragment>

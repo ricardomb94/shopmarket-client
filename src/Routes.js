@@ -10,12 +10,15 @@ import PrivateRoute from './auth/PrivateRoute';
 import AdminRoute from './auth/AdminRoute';
 import AddCategory from './Shop/AddCategory';
 import AddProduct from './Shop/AddProduct';
+import Catalogue from './core/Catalogue'
+
 
 const Routes =() => {
     return(
         <BrowserRouter>
             <Switch>
                 <Route path="/" exact component={App} />
+                <Route path="/Catalogue" exact component={Catalogue} />
                 <Route path="/signin" exact component={Signin} />
                 <Route path="/signup" exact component={Signup} />
                 <Route path="/auth/activate/:token" exact component={Activate} />
