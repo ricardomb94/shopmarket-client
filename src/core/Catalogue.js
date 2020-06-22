@@ -8,9 +8,13 @@ import Checkbox from './Checkbox';
 
 
 const Catalogue =()=> {
-    //Déclaration du state pour gérer les Catégories et cas d'erreur
+    //Déclaration du state pour gérer les Catégories les cas d'erreur et les filtres
+    const [catalogFilter, setCatalogFilter] = useState({
+        filters: {categories: [], price:[]}
+    })
     const [categories, setCategories] = useState([])
     const [error, setError] = useState([])
+    
     
     const init = () => {
         GetCategories()
@@ -25,7 +29,14 @@ const Catalogue =()=> {
     //On appelle useEffect au montage du composant pour uploader les données d'affichage du composant
     useEffect(()=>{
         init()
-    }, [])
+    }, []);
+    
+    const handleFilters = (filters, filterBy) => {
+        // console.log('Catalogue', filters, filterBy);
+        const newFilters = {...catalogFilter}
+        newFilters.filters[filterBy] = filters
+        setCatalogFilter(newFilters);
+    };
     
     return(
     
@@ -37,11 +48,15 @@ const Catalogue =()=> {
     {/*{JSON.stringify(categories)}*/}
                 <h3>Filtre par catégorie</h3>
                 <ul>
-                    <Checkbox categories={categories}/>
+                    <Checkbox 
+                        categories={categories} 
+                        handleFilters={filters =>handleFilters(filters, "categories")}
+                        
+                    />
                 </ul>
             </div>
             <div className="col-8">
-                right 
+                {JSON.stringify(catalogFilter)}
             </div>
           </div>
           

@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 
-//Checkbox accept la props categories. Ce qui nous permettra de transférer les données (liste des catégories) du composant parent au composant enfant checkbox
-const Checkbox = ({categories}) => {
+//Checkbox accept la props categories. Ce qui nous permettra de transférer les données (liste des catégories) du composant parent(Catalogue) au composant enfant (checkbox)
+const Checkbox = ({categories, handleFilters}) => {
     const [checked, setChecked]= useState([])
     
     const handleToggle = c => () => {
@@ -14,9 +14,10 @@ const Checkbox = ({categories}) => {
         }else{
             newCheckedCategoryId.slice(currentCategoryId)
         }
-        console.log(newCheckedCategoryId)
+    {/*console.log(newCheckedCategoryId)*/}
         //On update le state
-        setChecked(newCheckedCategoryId)
+        setChecked(newCheckedCategoryId);
+        handleFilters(newCheckedCategoryId);
     }
     
     return categories.map((c, i) => (
