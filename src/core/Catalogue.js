@@ -35,6 +35,7 @@ const Catalogue =()=> {
           <div className="row">
             <div className="col-4">
     {/*{JSON.stringify(categories)}*/}
+                <h3>Filtre par catégorie</h3>
                 <ul>
                     <Checkbox categories={categories}/>
                 </ul>
