@@ -2,11 +2,12 @@ import React, {useState, useEffect} from 'react';
 import Layout from '../core/Layout';
 import SliderEvent from '../components/SliderEvent';
 import GetCategories from '../Shop/GetCategories';
-// import Card from '../core/Card';
+import Checkbox from './Checkbox';
 
 
 
-const Catalogue =()=>{
+
+const Catalogue =()=> {
     //Déclaration du state pour gérer les Catégories et cas d'erreur
     const [categories, setCategories] = useState([])
     const [error, setError] = useState([])
@@ -33,7 +34,10 @@ const Catalogue =()=>{
             
           <div className="row">
             <div className="col-4">
-                {JSON.stringify(categories)}
+    {/*{JSON.stringify(categories)}*/}
+                <ul>
+                    <Checkbox categories={categories}/>
+                </ul>
             </div>
             <div className="col-8">
                 right 
