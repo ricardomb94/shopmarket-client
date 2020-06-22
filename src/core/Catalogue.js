@@ -1,11 +1,31 @@
 import React, {useState, useEffect} from 'react';
 import Layout from '../core/Layout';
 import SliderEvent from '../components/SliderEvent';
-import {getProducts} from '../core/Core.js';
-import Card from '../core/Card';
+import GetCategories from '../Shop/GetCategories';
+// import Card from '../core/Card';
+
 
 
 const Catalogue =()=>{
+    //Déclaration du state pour gérer les Catégories et cas d'erreur
+    const [categories, setCategories] = useState([])
+    const [error, setError] = useState([])
+    
+    const init = () => {
+        GetCategories()
+        .then(data => {
+            if(data.error) {
+                setError(data)
+            }else{
+                setCategories(data);
+            }
+        });
+    };
+    //On appelle useEffect au montage du composant pour uploader les données d'affichage du composant
+    useEffect(()=>{
+        init()
+    }, [])
+    
     return(
     
         <Layout className="container-fluid">
@@ -13,7 +33,7 @@ const Catalogue =()=>{
             
           <div className="row">
             <div className="col-4">
-                left sidebar
+                {JSON.stringify(categories)}
             </div>
             <div className="col-8">
                 right 

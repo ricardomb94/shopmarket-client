@@ -43,7 +43,7 @@ const App = ()=> {
     
           <Layout className="container-fluid">
             <SliderEvent/>
-            <p className="text-center text-light mt-1 mb-1 px-2 py-2 bg-danger">Renouvelez votre garde robe avec la sélection de robes stylées. En réduction maintenant, il n'y a jamais eu de meilleur moment pour acheter.</p>
+            <p className="text-center text-light mt-1 mb-1 px-2 py-2 bg-info">Renouvelez votre garde robe avec la sélection de robes stylées. En réduction maintenant, il n'y a jamais eu de meilleur moment pour acheter.</p>
               
               <h2 className="mb-4 text-center text-co p-5"><u>Les nouveautées</u></h2>
               <div className="container central">
