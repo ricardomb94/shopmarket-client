@@ -37,8 +37,27 @@ const Catalogue =()=> {
         // console.log('Catalogue', filters, filterBy);
         const newFilters = {...catalogFilter}
         newFilters.filters[filterBy] = filters
+        
+        if(filterBy == 'price'){
+            let priceValues = handlePrice(filters)
+            newFilters.filters[filterBy] = priceValues;
+        }
         setCatelogFilter(newFilters);
     };
+    
+    const handlePrice = value => {
+        const data = prices;
+        let array = [];
+        
+        for(let key in data){
+            if(data[key]._id === parseInt(value)){
+                array = data[key].array;
+                //   console.log('DATA KEY',data[key].array)
+            }
+        }
+        return array;
+    };
+    
     
     return(
     
@@ -67,8 +86,9 @@ const Catalogue =()=> {
             </div>
         </div>
         
+        
         <div className="col-8">
-               
+               {JSON.stringify(catalogFilter)}
             </div>   
         </Layout>
   
