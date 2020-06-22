@@ -3,14 +3,16 @@ import Layout from '../core/Layout';
 import SliderEvent from '../components/SliderEvent';
 import GetCategories from '../Shop/GetCategories';
 import Checkbox from './Checkbox';
+import {prices} from '../core/fixedPrices'
+import Radiobox from './Radiobox'
 
 
 
 
 const Catalogue =()=> {
     //Déclaration du state pour gérer les Catégories les cas d'erreur et les filtres
-    const [catalogFilter, setCatalogFilter] = useState({
-        filters: {categories: [], price:[]}
+    const [catalogFilter, setCatelogFilter] = useState({
+        filters: {category: [], price:[]}
     })
     const [categories, setCategories] = useState([])
     const [error, setError] = useState([])
@@ -35,7 +37,7 @@ const Catalogue =()=> {
         // console.log('Catalogue', filters, filterBy);
         const newFilters = {...catalogFilter}
         newFilters.filters[filterBy] = filters
-        setCatalogFilter(newFilters);
+        setCatelogFilter(newFilters);
     };
     
     return(
@@ -50,16 +52,24 @@ const Catalogue =()=> {
                 <ul>
                     <Checkbox 
                         categories={categories} 
-                        handleFilters={filters =>handleFilters(filters, "categories")}
+                        handleFilters={filters => handleFilters(filters, "category")}
                         
                     />
                 </ul>
+                <h3>Filtre par prix</h3>
+                <div>
+                    <Radiobox 
+                        prices={prices} 
+                        handleFilters={filters => handleFilters(filters, "price")}
+                        
+                    />
+                </div>
             </div>
-            <div className="col-8">
-                {JSON.stringify(catalogFilter)}
-            </div>
-          </div>
-          
+        </div>
+        
+        <div className="col-8">
+               
+            </div>   
         </Layout>
   
   );
