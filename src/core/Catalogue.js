@@ -2,9 +2,11 @@ import React, {useState, useEffect} from 'react';
 import Layout from '../core/Layout';
 import SliderEvent from '../components/SliderEvent';
 import GetCategories from '../Shop/GetCategories';
+import GetfilteredProducts from '../Shop/GetfilteredProducts';
 import Checkbox from './Checkbox';
 import {prices} from '../core/fixedPrices'
 import Radiobox from './Radiobox'
+
 
 
 
@@ -14,8 +16,11 @@ const Catalogue =()=> {
     const [catalogFilter, setCatelogFilter] = useState({
         filters: {category: [], price:[]}
     })
-    const [categories, setCategories] = useState([])
-    const [error, setError] = useState([])
+    const [categories, setCategories] = useState([]);
+    const [error, setError] = useState(false);
+    const [limit, setLimit] = useState(6);
+    const [skip, setKip] = useState(0);
+    const [filteredResults, setFilteredResults] = useState(0);
     
     
     const init = () => {
@@ -28,9 +33,21 @@ const Catalogue =()=> {
             }
         });
     };
+    
+    const loadFilteredResults = newFilters => {
+        // console.log(newFilters)
+        GetfilteredProducts(skip, limit, newFilters).then(data => {
+            if(data.error){
+                setError(data.error)
+            }else{
+                setFilteredResults(data)
+            }
+        })
+    } 
     //On appelle useEffect au montage du composant pour uploader les données d'affichage du composant
     useEffect(()=>{
-        init()
+        init();
+        loadFilteredResults(skip, limit, catalogFilter.filters)
     }, []);
     
     const handleFilters = (filters, filterBy) => {
@@ -59,9 +76,7 @@ const Catalogue =()=> {
         }
         return array;
     };
-    const loadFilteredResults = (newFilters)=>{
-        // console.log(newFilters)
-    }
+    
     
     return(
     
@@ -88,12 +103,13 @@ const Catalogue =()=> {
                     />
                 </div>
             </div>
+            <div className="col-8">
+               {JSON.stringify(filteredResults)}
+            </div>   
         </div>
         
         
-        <div className="col-8">
-               {JSON.stringify(catalogFilter)}
-            </div>   
+        
         </Layout>
   
   );
