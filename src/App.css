@@ -2,6 +2,7 @@
 html,body { 
     padding-top: 0px; 
     font-family: 'GFS Neohellenic','Montserra', 'Lato', sans-serif; 
+    background:radial-gradient(#e5e5e5, #ffff, #e5e5e5)
 }
 /* container-fluid */
 .container-fluid{
@@ -126,6 +127,7 @@ figcaption{
     background: blanchedalmond;
 }
 
+/**CARD**/
 .card-header {
     text-transform: uppercase;
     font-size: 0.8rem;
@@ -134,9 +136,19 @@ figcaption{
 .card-body {
     padding: 0;
 }
-/* .central{
-    
-} */
+.card:hover{
+    box-shadow: 5px 10px 20px 1px rgba(0, 0, 0,0.253)!important;
+}
+.card-img-top{
+    transform:scale(1);
+}
+.card-img-top:hover{
+    transform: scale(1.8);
+    transition: transform 5.2s ease;
+}
+.overflow{ 
+    overflow: hidden;
+}
 
 /* Footer */
 footer {

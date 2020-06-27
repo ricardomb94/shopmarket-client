@@ -42,6 +42,8 @@ const Catalogue =()=> {
             let priceValues = handlePrice(filters)
             newFilters.filters[filterBy] = priceValues;
         }
+        
+        loadFilteredResults(catalogFilter.filters)
         setCatelogFilter(newFilters);
     };
     
@@ -57,7 +59,9 @@ const Catalogue =()=> {
         }
         return array;
     };
-    
+    const loadFilteredResults = (newFilters)=>{
+        // console.log(newFilters)
+    }
     
     return(
     
