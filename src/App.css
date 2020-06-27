@@ -5,12 +5,12 @@ html,body {
     background:radial-gradient(#e5e5e5, #ffff, #e5e5e5)
 }
 /* container-fluid */
-.container-fluid{
-    /* background: #010911; */
+/* .container-fluid{
+    background: #010911;
     padding-left: 0;
     padding-right: 0;
    
-}
+} */
 /* Nav */
 .navbar-brand{
     margin-left:1rem;
@@ -148,6 +148,12 @@ figcaption{
 }
 .overflow{ 
     overflow: hidden;
+}
+
+/***CATALOGUE***/
+.container.catalogue.row{
+    margin-right: -10px;
+    margin-left: -10px;
 }
 
 /* Footer */

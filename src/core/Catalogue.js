@@ -4,8 +4,9 @@ import SliderEvent from '../components/SliderEvent';
 import GetCategories from '../Shop/GetCategories';
 import GetfilteredProducts from '../Shop/GetfilteredProducts';
 import Checkbox from './Checkbox';
-import {prices} from '../core/fixedPrices'
-import Radiobox from './Radiobox'
+import {prices} from '../core/fixedPrices';
+import Radiobox from './Radiobox';
+import Card from '../core/Card';
 
 
 
@@ -13,14 +14,15 @@ import Radiobox from './Radiobox'
 
 const Catalogue =()=> {
     //Déclaration du state pour gérer les Catégories les cas d'erreur et les filtres
-    const [catalogFilter, setCatelogFilter] = useState({
+    const [catalogFilter, setCatalogFilter] = useState({
         filters: {category: [], price:[]}
     })
     const [categories, setCategories] = useState([]);
     const [error, setError] = useState(false);
     const [limit, setLimit] = useState(6);
-    const [skip, setKip] = useState(0);
-    const [filteredResults, setFilteredResults] = useState(0);
+    const [skip, setSkip] = useState(0);
+    const [size, setSize] = useState(0);
+    const [filteredResults, setFilteredResults] = useState([]);
     
     
     const init = () => {
@@ -40,10 +42,39 @@ const Catalogue =()=> {
             if(data.error){
                 setError(data.error)
             }else{
-                setFilteredResults(data)
+                setFilteredResults(data.data);
+                setSize(data.size)
+                setSkip(0)
             }
-        })
-    } 
+        });
+    };
+    
+    const loadMore = () => {
+        let toSkip = skip + limit
+        // console.log(newFilters)
+        GetfilteredProducts(toSkip, limit, catalogFilter.filters).then(data => {
+            if(data.error){
+                setError(data.error)
+            }else{
+                setFilteredResults([...filteredResults, data.data]);
+                setSize(data.size);
+                setSkip(toSkip);
+            }
+        });
+    };
+    
+    const loadMoreButton = () => {
+        return(
+            size > 0 && 
+            size >= limit &&(
+                <button onClick={loadMore} className="btn btn-info mb-5">
+                    Suite
+                </button>
+            )
+        );
+        
+    };
+    
     //On appelle useEffect au montage du composant pour uploader les données d'affichage du composant
     useEffect(()=>{
         init();
@@ -61,7 +92,7 @@ const Catalogue =()=> {
         }
         
         loadFilteredResults(catalogFilter.filters)
-        setCatelogFilter(newFilters);
+        setCatalogFilter(newFilters);
     };
     
     const handlePrice = value => {
@@ -80,13 +111,13 @@ const Catalogue =()=> {
     
     return(
     
-        <Layout className="container-fluid">
+        <Layout >
           <SliderEvent/>            
-            
+        <div className="container-fluid catalogue">    
           <div className="row">
-            <div className="col-4">
+            <div className="col-3">
     {/*{JSON.stringify(categories)}*/}
-                <h3>Filtre par catégorie</h3>
+                <h4 className="mb-3 mt-5">Filtre par catégorie</h4>
                 <ul>
                     <Checkbox 
                         categories={categories} 
@@ -94,7 +125,7 @@ const Catalogue =()=> {
                         
                     />
                 </ul>
-                <h3>Filtre par prix</h3>
+                <h4 className="mb-4">Filtre par prix</h4>
                 <div>
                     <Radiobox 
                         prices={prices} 
@@ -102,14 +133,20 @@ const Catalogue =()=> {
                         
                     />
                 </div>
+                </div>
+                
+                <div className="col-8">
+                    <h4 className="mb-4 mt-4">Articles</h4>
+                    <div className="row">
+                        {filteredResults.map((product, i)=> (
+                            <Card key={i} product={product}/>
+                        ))}
+                    </div>
+                    <hr/>
+                {loadMoreButton()}
+                </div>   
             </div>
-            <div className="col-8">
-               {JSON.stringify(filteredResults)}
-            </div>   
-        </div>
-        
-        
-        
+            </div>
         </Layout>
   
   );
