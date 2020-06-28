@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import Layout from '../core/Layout';
-import SliderEvent from '../components/SliderEvent';
+// import SliderEvent from '../components/SliderEvent';
 import GetCategories from '../Shop/GetCategories';
 import GetfilteredProducts from '../Shop/GetfilteredProducts';
 import Checkbox from './Checkbox';
 import {prices} from '../core/fixedPrices';
 import Radiobox from './Radiobox';
 import Card from '../core/Card';
+import Zoom from 'react-reveal/Zoom';
+import Pulse from 'react-reveal/Pulse';
 
 
 
@@ -67,7 +69,7 @@ const Catalogue =()=> {
         return(
             size > 0 && 
             size >= limit &&(
-                <button onClick={loadMore} className="btn btn-info mb-5">
+                <button onClick={loadMore} className="btn btn-outline-warning mb-5">
                     Suite
                 </button>
             )
@@ -112,20 +114,24 @@ const Catalogue =()=> {
     return(
     
         <Layout >
-          <SliderEvent/>            
+          {/*<SliderEvent/> */ }   
+          <div className="jumbotron catego text-center text-uppercase text-muted font-x-small">
+                    <Zoom right cascade><h4>C'est le meilleurs moment d'acheter</h4></Zoom>
+                        <Pulse><hr className="bg-danger underline"/></Pulse></div>
         <div className="container-fluid catalogue">    
           <div className="row">
-            <div className="col-3">
+            <div className="col-2 mt-5 ">
     {/*{JSON.stringify(categories)}*/}
-                <h4 className="mb-3 mt-5">Filtre par catégorie</h4>
+                <h4 className="mb-3 mt-3">Filtre par catégorie</h4>
                 <ul>
                     <Checkbox 
+                       
                         categories={categories} 
                         handleFilters={filters => handleFilters(filters, "category")}
                         
                     />
                 </ul>
-                <h4 className="mb-4">Filtre par prix</h4>
+                <h4 className="mb-3">Filtre par prix</h4>
                 <div>
                     <Radiobox 
                         prices={prices} 
@@ -135,8 +141,8 @@ const Catalogue =()=> {
                 </div>
                 </div>
                 
-                <div className="col-8">
-                    <h4 className="mb-4 mt-4">Articles</h4>
+                <div className="col-10">
+                    <h4 className="mb-3 mt-1 text-center">Catalogue</h4>
                     <div className="row">
                         {filteredResults.map((product, i)=> (
                             <Card key={i} product={product}/>

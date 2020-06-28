@@ -22,6 +22,13 @@ const Card = ({product}) => {
                              <button className="btn btn-outline-danger mt-2 mb-2" >
                                 Ajouter au pagner
                             </button>
+                                <ul className="list-inline small">
+                                    <li className="list-inline-item m-0"><i className="fa fa-star text-success"></i></li>
+                                    <li className="list-inline-item m-0"><i className="fa fa-star text-success"></i></li>
+                                    <li className="list-inline-item m-0"><i className="fa fa-star text-success"></i></li>
+                                    <li className="list-inline-item m-0"><i className="fa fa-star text-success"></i></li>
+                                    <li className="list-inline-item m-0"><i className="fa fa-star-o text-success"></i></li>
+                                </ul>
                     </div>
             </div>
         </div>
