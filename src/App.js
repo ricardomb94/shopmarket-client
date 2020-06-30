@@ -15,6 +15,7 @@ const App = ()=> {
     const loadProductsBySell = () =>{
       getProducts('sold').then(data =>{
         if(data.error){
+        console.log('DATA ERROR GET PROD', data.error)
           setError(data.error)
         }else{
           setProductsBySell(data)
