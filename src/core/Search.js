@@ -1,11 +1,37 @@
 import React, {useState, useEffect} from "react";
-import {getProducts} from '../core/Core.js';
+import GetCategories from '../Shop/GetCategories';
 import Card from "./Card";
 
+
 const Search = () => {
+    const [data, setData] = useState({
+        categories:[],
+        category: "",
+        search: "",
+        results: [],
+        searched: false
+    });
+  
+    const {categories, category, search, results, searched} = data
+    const loadCategories = () => {
+        GetCategories().then(data => {
+            if(data.error){
+                console.log(data.error)
+            }else {
+                setData({...data, categories: data})
+            }
+        })
+    }
+    
+    //Au montage du composant les categories
+    useEffect(() => {
+        loadCategories()
+    },[])
+
     return (
         <div className="container-fluid">
-	<div className="row justify-content-center catego pb-3">
+        {JSON.stringify(categories)}
+	<div className="row justify-content-center text-co pb-3 pt-5">
                         <div className="col-12 col-md-10 col-lg-8 mt-0">
                             <form className="card card-sm">
                                 <div className="card-body row no-gutters align-items-center">

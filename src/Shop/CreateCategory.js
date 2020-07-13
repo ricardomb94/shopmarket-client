@@ -1,8 +1,8 @@
-import {isAuth, getCookie} from '../auth/helpers';
+// import {getCookie} from '../auth/helpers';
 import axios from "axios";
 
 
-const token = getCookie('token');
+//  const token = getCookie('token');
 
 
 const CreateCategory = (_id, token,category) => {
