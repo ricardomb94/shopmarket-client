@@ -46,14 +46,14 @@ const App = ()=> {
             <SliderEvent/>
             <p className="text-center text-light mt-1 mb-1 px-2 py-2 bg-info">Renouvelez votre garde robe avec la sélection de robes stylées. En réduction maintenant, il n'y a jamais eu de meilleur moment pour acheter.</p>
             <Search/>
-              <h2 className="mb-4 text-center text-co p-1"><u>Les nouveautées</u></h2>
+              <h2 className="mb-4 text-center catego text-co p-1"><u>Les nouveautées</u></h2>
               <div className="container central">
               <div className="row">
               {productsByArrival.map((product, i)=>(
                 <Card key={i} product={product}/>
             ))}
               </div>
-              <h2 className="mb-4 text-center text-co p-5"><u>Meilleures ventes</u></h2>
+              <h2 className="mb-4 text-center catego text-co p-5"><u>Meilleures ventes</u></h2>
               <div className="row">
               {productsBySell.map((product, i)=>(
                 <Card key={i} product={product}/>

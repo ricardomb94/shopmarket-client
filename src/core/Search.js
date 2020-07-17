@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import GetCategories from '../Shop/GetCategories';
 import Card from "./Card";
-
+import {list} from './SearchList'
 
 const Search = () => {
     const [data, setData] = useState({
@@ -29,7 +29,17 @@ const Search = () => {
     },[]);
     
     const searchData = () => {
-        console.log("SEARCH", search, category);
+        // console.log("SEARCH", search, category);
+        if(search){
+            list({search: search || undefined, category})
+            .then(response => {
+                if(response.error){
+                    console.log(response.error)
+                }else{
+                    setData({...data, results: response, searched: true});
+                }
+            })
+        }
     }
     
     const searchSubmit = (e) =>{
@@ -43,7 +53,7 @@ const Search = () => {
     
     const searchForm = () => (
         <form onSubmit={searchSubmit}>
-            <span className="input-group-text">
+            <span className="input-group-text rounded bg-light p-3">
                 <div className="input-group input-group-lg">
                     <div className="input-group-prepend">
                         <select 
@@ -61,7 +71,7 @@ const Search = () => {
                     </div>
                     <input
                         type="search"
-                        className="form-control"
+                        className="form-control form-control-lg form-control-borderless rounded-lg"
                         onChange={handleChange("search")}
                         placeholder="Recherchez par nom"  
                     />
@@ -100,9 +110,12 @@ const Search = () => {
 
                             return (
                                 <div className="container-fluid mb-3">
-                                {JSON.stringify(categories)}
+                                {/*{JSON.stringify(categories)}*/}
                                     <div className="row justify-content-center text-co pb-3 pt-5">
-                                        <div className="col-12 col-md-10 col-lg-8 mt-0">{searchForm()}</div>
+                                        <div className="col-12 col-md-10 col-lg-8 mt-0">
+                                        {searchForm()}
+                                        {JSON.stringify(results)}
+                                        </div>
                                     </div>
                                 </div>
                             

@@ -7,3 +7,4 @@ export const getProducts = (sortBy) => {
     })
     .catch(err => console.log(err));
 };
+
