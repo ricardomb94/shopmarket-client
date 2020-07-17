@@ -130,6 +130,16 @@ figcaption{
     background: blanchedalmond;
 }
 
+
+/**FILTRE**/
+.col-3 {
+    border: 0.195rem solid #02061a;
+    margin-top: 6.2rem;
+    max-width: 20%;
+    margin-bottom: 47.1rem;
+}
+
+
 /**CARD**/
 .card-header {
     text-transform: uppercase;
@@ -158,6 +168,10 @@ figcaption{
     margin-right: -10px;
     margin-left: -10px;
 }
+
+/* .row.row-catalogue{
+    margin-right: -120px;
+} */
 
 /* Footer */
 footer {
@@ -191,7 +205,7 @@ footer {
     background: #e74c3c !important;
     } */
 
-    .searchbar{
+    /* .searchbar{
     margin-bottom: auto;
     margin-top: auto;
     height: 60px;
@@ -233,7 +247,7 @@ footer {
     border-radius: 50%;
     color:white;
     text-decoration:none;
-    }
+    } */
  
  /**
  Search bar end

@@ -114,7 +114,7 @@ const Catalogue =()=> {
         <Layout >
           <SliderEvent/>            
         <div className="container-fluid catalogue">    
-          <div className="row">
+          <div className="row row-catalogue">
             <div className="col-3">
     {/*{JSON.stringify(categories)}*/}
                 <h4 className="mb-3 mt-5">Filtre par catégorie</h4>
