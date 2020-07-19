@@ -3,7 +3,7 @@ import queryString from 'query-string'
 export const list = params => {
     const query = queryString.stringify(params)
     console.log('QUERY', query)
-    return fetch(`${process.env.REACT_APP_API}/products?${query}`,{
+    return fetch(`${process.env.REACT_APP_API}/products/search?${query}`, {
         method: 'GET'
     })
         .then(response =>{

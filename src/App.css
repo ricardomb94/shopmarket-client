@@ -127,10 +127,19 @@ figcaption{
 }
 .text-co{
     color: rgb(192, 172, 121);
-    background: blanchedalmond;
+    /* background: blanchedalmond; */
+    /* background: #fdb479; */
+    /* background: #9b1d20; */
+    /* background: #d8dc6a; */
+    background: #444545;
     /* background: #02061a; */
 }
-
+.goldenrod{
+    background:darkgoldenrod;
+}
+.textColor{
+    color:darkgoldenrod;
+}
 
 /**FILTRE**/
 .col-3 {
@@ -138,6 +147,10 @@ figcaption{
     margin-top: 6.2rem;
     max-width: 20%;
     margin-bottom: 47.1rem;
+}
+.display-4, h2{
+    border: 0.1rem solid goldenrod;
+    border-radius: 5px;
 }
 
 

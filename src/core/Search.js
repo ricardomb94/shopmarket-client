@@ -47,9 +47,19 @@ const Search = () => {
         searchData()
     }
     
-    const handleChange = name => event => {
+    const handleChange = (name) => event => {
         setData({...data, [name]: event.target.value, searched:false});
     }
+    
+    const searchedProducts = (results = [])=>{
+       return(
+            <div className="row">
+                {results.map((product, i)=> (
+                    <Card key={i} product={product} />
+                ))}
+            </div>
+       );
+    };
     
     const searchForm = () => (
         <form onSubmit={searchSubmit}>
@@ -77,7 +87,10 @@ const Search = () => {
                     />
                 </div>
                 <div className="btn input-group-append" style={{border:'none'}}>
-                    <button className="input-group-text">Cherchez</button>
+                    <button className="input-group-text"><svg width="2em" height="2em" viewBox="0 0 16 16" className="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                  </svg></button>
                 </div>
             </span>
         </form>
@@ -109,12 +122,15 @@ const Search = () => {
                             
 
                             return (
-                                <div className="container-fluid mb-3">
-                                {/*{JSON.stringify(categories)}*/}
-                                    <div className="row justify-content-center text-co pb-3 pt-5">
+                                <div className="container-fluid">
+                                    <div className="row justify-content-center catego pb-3 pt-5">
                                         <div className="col-12 col-md-10 col-lg-8 mt-0">
-                                        {searchForm()}
-                                        {JSON.stringify(results)}
+                                            {searchForm()}
+                                        </div>
+                                    </div>
+                                    <div className="row justify-content-center pb-3 pt-5">
+                                        <div className="col-12 col-md-10 col-lg-8 mt-0">
+                                            {searchedProducts(results)}
                                         </div>
                                     </div>
                                 </div>
