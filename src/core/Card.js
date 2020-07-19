@@ -7,7 +7,9 @@ import ProductImage from './ProductImage'
 const Card = ({product}) => {
     return (
     
-        <div className="col-md-4 mb-4 mt-2">
+        <div className="col-md-4
+        
+        mb-4 mt-2">
             <div className="card">
                 <div className="card-header text-center text-light catego">{product.name}</div>
                     <div className="card-body text-center">

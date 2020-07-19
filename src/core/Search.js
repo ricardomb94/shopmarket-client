@@ -70,7 +70,7 @@ const Search = () => {
                                 className="btn mr-2" 
                                 onChange={handleChange("category")}
                                 >
-                                <option value="All">Choisissez une catégorie</option>
+                                <option className="text-sm text-muted" value="All">Catégorie</option>
                                 {categories.map((c, i)=>(
                                     <option key={i} value={c._id}>
                                         {c.name}
@@ -88,8 +88,8 @@ const Search = () => {
                 </div>
                 <div className="btn input-group-append" style={{border:'none'}}>
                     <button className="input-group-text"><svg width="2em" height="2em" viewBox="0 0 16 16" className="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                    <path fillRule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                    <path fillRule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
                   </svg></button>
                 </div>
             </span>
@@ -123,7 +123,7 @@ const Search = () => {
 
                             return (
                                 <div className="container-fluid">
-                                    <div className="row justify-content-center catego pb-3 pt-5">
+                                    <div className="row justify-content-center bg-primary pb-3 pt-5">
                                         <div className="col-12 col-md-10 col-lg-8 mt-0">
                                             {searchForm()}
                                         </div>

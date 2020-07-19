@@ -139,11 +139,15 @@ figcaption{
 }
 .textColor{
     color:darkgoldenrod;
+    font-size: x-large;
 }
 
 /**FILTRE**/
 .col-3 {
-    border: 0.195rem solid #02061a;
+    border: 0.195rem solid #e0ded6;
+    /* background: #f6c240; */
+    background: #f7c80d9a;
+    border-radius: 35px;
     margin-top: 6.2rem;
     max-width: 20%;
     margin-bottom: 47.1rem;
@@ -273,3 +277,12 @@ footer {
         max-width: 1317px;
     }
 }
+
+/* @media (min-width: 768px){
+    .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+       
+    }
+} */
+
