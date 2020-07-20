@@ -50,13 +50,52 @@ const Search = () => {
     const handleChange = (name) => event => {
         setData({...data, [name]: event.target.value, searched:false});
     }
+    const searchMessage = (searched, results)=>{
+        if(searched && results.length > 0){
+            return (
+                <div 
+                    className="alert alert-info alert-dismissible fade show text-center" 
+                    role="alert">
+                    {results.length} produits trouvés.
+                    <button 
+                        type="button" 
+                        className="close" 
+                        data-dismiss="alert" 
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+          );
+        }
+        if(searched && results.length < 1){
+            return (
+                <div 
+                    className="alert alert-warning alert-dismissible fade show text-center" 
+                    role="alert">
+                        aucun produit trouvé.
+                    <button 
+                        type="button" 
+                        className="close" 
+                        data-dismiss="alert" 
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+          );
+        }
+    }
     
     const searchedProducts = (results = [])=>{
        return(
-            <div className="row">
-                {results.map((product, i)=> (
-                    <Card key={i} product={product} />
-                ))}
+            <div>
+                <h3 className="mt-4 mb-4">
+                    {searchMessage(searched, results)}
+                </h3>
+                <div className="row">
+                    {results.map((product, i)=> (
+                        <Card key={i} product={product} />
+                    ))}
+                </div>
             </div>
        );
     };
