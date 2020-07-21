@@ -45,7 +45,11 @@ li{
 }
 
 .catego{
-    background: #130229;
+    /* background: #130229; */
+    background: rgb(1, 9, 17);
+}
+.darkslategray{
+    background:darkslategray;
 }
 /* .goldenrod{
     background:rgb(236, 172, 9);

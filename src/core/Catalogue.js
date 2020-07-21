@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Layout from '../core/Layout';
-import SliderEvent from '../components/SliderEvent';
+// import SliderEvent from '../components/SliderEvent';
 import GetCategories from '../Shop/GetCategories';
 import GetfilteredProducts from '../Shop/GetfilteredProducts';
 import Checkbox from './Checkbox';
@@ -112,7 +112,13 @@ const Catalogue =()=> {
     return(
     
         <Layout >
-          <SliderEvent/>            
+        <div
+        className="mb-5">
+           <img src={process.env.PUBLIC_URL + '/media/carousel8.jpg'} alt="model femme" />
+   {/*<h1 className="display-4">Fluid jumbotron</h1>*/}
+       </div>
+           
+                 
         <div className="container-fluid catalogue">    
           <div className="row row-catalogue">
             <div className="col-3">

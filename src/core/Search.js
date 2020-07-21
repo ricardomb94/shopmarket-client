@@ -9,14 +9,13 @@ const Search = () => {
         category: "",
         search: "",
         results: [],
-        searched: false
+        searched: false,
     });
   
     const {categories, category, search, results, searched} = data
     const loadCategories = () => {
         GetCategories().then(data => {
             if(data.error){
-                console.log(data.error)
             }else {
                 setData({...data, categories: data})
             }

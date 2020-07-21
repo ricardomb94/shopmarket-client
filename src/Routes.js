@@ -10,7 +10,8 @@ import PrivateRoute from './auth/PrivateRoute';
 import AdminRoute from './auth/AdminRoute';
 import AddCategory from './Shop/AddCategory';
 import AddProduct from './Shop/AddProduct';
-import Catalogue from './core/Catalogue'
+import Catalogue from './core/Catalogue';
+import Product from './core/Product';
 
 
 const Routes =() => {
@@ -26,6 +27,8 @@ const Routes =() => {
                 <AdminRoute path="/Admin" exact component={Admin} />
                 <AdminRoute path="/category/create" exact component={AddCategory} />
                 <AdminRoute path="/product/create" exact component={AddProduct} />
+                <Route path="/product/:productId" exact component={Product} />
+              {/*  <Route path="/product/:productId" exact component={Product} render={props => <Product {...props.match.params} />}/>*/}
             </Switch>
         </BrowserRouter>
 

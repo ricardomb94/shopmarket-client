@@ -1,4 +1,5 @@
 import React from 'react';
+import{Link} from 'react-router-dom';
 
 const Footer = () => (
     
@@ -10,8 +11,11 @@ const Footer = () => (
           <small className="d-block mb-3 text-muted">&copy; 2020</small>
         </div>}
         <div className="col-6 col-md">
-          <h5>Features</h5>
+          <h5>Qui sommes-nous</h5>
           <ul className="list-unstyled text-small">
+          <li>
+          <Link to="/" className="text-muted">Notre histoire</Link>
+       </li>
            {/* <li><a className="text-muted" href="#">Cool stuff</a></li>
 <li><a className="text-muted" href="#">Random feature</a></li>*/}
           </ul>
@@ -19,22 +23,34 @@ const Footer = () => (
         <div className="col-6 col-md">
           <h5>Resources</h5>
           <ul className="list-unstyled text-small">
-           <li><a className="text-muted" href="#">Resource</a></li>
-<li><a className="text-muted" href="#">Resource name</a></li>
+           <li>
+              <Link to="/" className="text-muted">Resource</Link>
+           </li>
+           <li>
+              <Link to="/" className="text-muted">Resource name</Link>
+           </li>
           </ul>
         </div>
         <div className="col-6 col-md">
           <h5>Qui sommes-nous</h5>
           <ul className="list-unstyled text-small">
-            <li><a className="text-muted" href="#">Business</a></li>
-<li><a className="text-muted" href="#">Education</a></li>
+            <li>
+              <Link to="/" className="text-muted">Business</Link>
+            </li>
+            <li>
+              <Link to="/" className="text-muted">Education</Link>
+            </li>
           </ul>
         </div>
         <div className="col-6 col-md">
           <h5>Contact</h5>
           <ul className="list-unstyled text-small">
-            <li><a className="text-muted" href="#">Team</a></li>
-<li><a className="text-muted" href="#">Locations</a></li>
+            <li>
+              <Link to="/" className="text-muted">Equipe</Link>
+            </li>
+            <li>
+              <Link to="/" className="text-muted"></Link>
+            </li>
           </ul>
         </div>
       </div>
