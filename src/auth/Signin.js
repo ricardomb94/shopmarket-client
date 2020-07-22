@@ -12,7 +12,7 @@ const Signin = ({history}) => {
 //On déclare une variable d'état local (ou le State)
 const [values, setValues] = useState({
     email:"aymardmb@gmail.com",
-    password:"amparo",
+    password:"aymard",
     buttonText:"Envoyer"
  });
 

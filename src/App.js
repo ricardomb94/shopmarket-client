@@ -44,24 +44,23 @@ const App = ()=> {
     
           <Layout>
             <SliderEvent/>
-            <p className="text-center text-light mt-1 mb-1 px-2 py-2 goldenrod">Renouvelez votre garde robe avec la sélection de robes stylées. En réduction maintenant, il n'y a jamais eu de meilleur moment pour acheter.</p>
+              <p className="text-center text-light mt-1 mb-1 px-2 py-2 goldenrod">Renouvelez votre garde robe avec la sélection de robes stylées. En réduction maintenant, il n'y a jamais eu de meilleur moment pour acheter.</p>
             <Search/>
-              <h5 className=" display-4 mb-4 text-center textColor text-uppercase catego darkslategray p-3">Les nouveautées</h5>
+              <h5 className=" display-4 mb-4 text-center textColor text-uppercase darkslategray p-3">Les nouveautées</h5>
               <div className="container central">
-              <div className="row">
-              {productsByArrival.map((product, i)=>(
-                <Card key={i} product={product}/>
-            ))}
+                <div className="row">
+              
+                    {productsByArrival.map((product, i)=>(
+                      <Card key={i} product={product}/>
+                    ))}
               </div>
-              <h5 className=" display-4 mb-4 mt-5 text-center textColor text-uppercase text-sm catego darkslategray p-3">Meilleures ventes</h5>
-              <div className="row">
-              {productsBySell.map((product, i)=>(
-                <Card key={i} product={product}/>
-            ))}
+              <h5 className=" display-4 mb-4 mt-5 text-center textColor text-uppercase darkslategray p-3">Meilleures ventes</h5>
+                <div className="row">
+                      {productsBySell.map((product, i)=>(
+                        <Card key={i} product={product}/>
+                      ))}
+                </div>
               </div>
-              </div>
-            
-            
           </Layout>
     
     )
