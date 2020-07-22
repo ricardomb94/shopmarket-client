@@ -13,18 +13,18 @@ const Search = () => {
     });
   
     const {categories, category, search, results, searched} = data
-   
+    const loadCategories = () => {
+        GetCategories().then(data => {
+            if(data.error){
+            }else {
+                setData({...data, categories: data})
+            }
+        })
+    }
     
     //Au montage du composant les categories
     useEffect(() => {
-        const loadCategories = () => {
-            GetCategories().then(data => {
-                if(data.error){
-                }else {
-                    setData({...data, categories: data})
-                }
-            })
-        }
+        loadCategories()
     },[]);
     
     const searchData = () => {
